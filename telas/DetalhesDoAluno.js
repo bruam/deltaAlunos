@@ -8,13 +8,14 @@ function DetalhesDoAluno(props) {
     const estadoInicial = {
         id: '',
         nome: '',
-        email: '',
+        endereco: '',
         foto: ''
     }
     
     // Guarda informações dos alunos em um estado
     const [aluno, novoAluno] = useState(estadoInicial)    
 
+    // Guarda estado de carregando ou carregado
     const [carregando, carregado] = useState(true)
     
     /**
@@ -56,7 +57,7 @@ function DetalhesDoAluno(props) {
         const infoBanco = firebase.db.collection('alunos').doc(aluno.id)
         await infoBanco.set({
             nome: aluno.nome,
-            email: aluno.email,
+            endereco: aluno.endereco,
             foto: aluno.foto
         })
         atualizaInfoAluno(estadoInicial)
@@ -92,9 +93,9 @@ function DetalhesDoAluno(props) {
             </View>
             <View style={estilos.campoTexto}>
                 <TextInput 
-                 placeholder="Email do Aluno" 
-                 value={aluno.email}
-                 onChangeText={(valor) => mudancaDeInformacao("email", valor)}
+                 placeholder="Endereço do Aluno" 
+                 value={aluno.endereco}
+                 onChangeText={(valor) => mudancaDeInformacao("endereco", valor)}
                 />
             </View>
             <View style={estilos.campoTexto}>

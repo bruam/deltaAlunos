@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useReducer} from 'react';
-import {View,Text,ScrollView, Button} from 'react-native'
+import React, {useState, useEffect} from 'react';
+import {ScrollView, Button} from 'react-native'
 import firebase from '../banco_de_dados/firebase'
 import { ListItem, Avatar } from 'react-native-elements'
 
@@ -21,11 +21,11 @@ function ListaDeAlunos(props) {
 
             //Percorre informações do banco e guarda no array de alunos
             querySnapshot.docs.forEach(doc => {
-                const {nome,email,foto} = doc.data()
+                const {nome,endereco,foto} = doc.data()
                 alunos.push({
                     id: doc.id,
                     nome,
-                    email,
+                    endereco,
                     foto
                 })
             })
@@ -61,7 +61,7 @@ function ListaDeAlunos(props) {
                             />
                             <ListItem.Content>
                                 <ListItem.Title>{aluno.nome}</ListItem.Title>
-                                <ListItem.Subtitle>{aluno.email}</ListItem.Subtitle>
+                                <ListItem.Subtitle>{aluno.endereco}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     )

@@ -13,7 +13,7 @@ const NovoAluno = (props) => {
      */
     const [estado, novoEstado] = useState({
         nome: '',
-        email: '',
+        endereco: '',
         foto: ''
     })
 
@@ -36,7 +36,7 @@ const NovoAluno = (props) => {
             try {
                 await firebase.db.collection('alunos').add({
                     nome: estado.nome,
-                    email: estado.email,
+                    endereco: estado.endereco,
                     foto: estado.foto
                 })
                 props.navigation.navigate('ListaDeAlunos');                
@@ -57,8 +57,8 @@ const NovoAluno = (props) => {
             </View>
             <View style={estilos.campoTexto}>
                 <TextInput 
-                 placeholder="Email do Aluno" 
-                 onChangeText={(valor) => mudancaDeInformacao("email", valor)}
+                 placeholder="Endereço do Aluno" 
+                 onChangeText={(valor) => mudancaDeInformacao("endereco", valor)}
                 />
             </View>
             <View style={estilos.campoTexto}>

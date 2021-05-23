@@ -11,6 +11,7 @@ const Stack = createStackNavigator()
 import ListaDeAlunos from "./telas/ListaDeAlunos"
 import NovoAluno from "./telas/NovoAluno"
 import DetalhesDoAluno from "./telas/DetalhesDoAluno"
+import TelaInicial from './telas/TelaInicial';
 
 /**
  * Função de componente que contém as tela que 
@@ -21,6 +22,11 @@ function MinhaPilha() {
   return(
     <Stack.Navigator>
       {/* Telas na ordem que serão navegadas */}
+      <Stack.Screen 
+       name="TelaInicial" 
+       component={TelaInicial} 
+       options={{title:'Delta Alunos'}}
+      />
       <Stack.Screen 
        name="ListaDeAlunos" 
        component={ListaDeAlunos} 
