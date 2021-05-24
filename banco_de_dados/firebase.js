@@ -1,6 +1,7 @@
 import firebase from 'firebase'
 
 import 'firebase/firestore'
+import 'firebase/storage'
 
 var firebaseConfig = {
     apiKey: "AIzaSyDKN-wCOdshZin05XMPf02ic6UaxcqUD94",
@@ -15,9 +16,11 @@ var firebaseConfig = {
 
   //constante para utilizar o banco
   const db = firebase.firestore()
+  const st = firebase.storage()
 
   //exporta firebase e constante do banco
   export default {
       firebase,
       db,
+      st
   }

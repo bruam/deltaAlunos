@@ -25,8 +25,7 @@ function ListaDeAlunos(props) {
                 alunos.push({
                     id: doc.id,
                     nome,
-                    endereco,
-                    foto
+                    endereco
                 })
             })
             
@@ -53,12 +52,12 @@ function ListaDeAlunos(props) {
                          }}
                         >
                             <ListItem.Chevron/>
-                            <Avatar 
+                            {/* <Avatar 
                              source={{
                                 uri:''
                                     }}
                              rounded
-                            />
+                            /> */}
                             <ListItem.Content>
                                 <ListItem.Title>{aluno.nome}</ListItem.Title>
                                 <ListItem.Subtitle>{aluno.endereco}</ListItem.Subtitle>
